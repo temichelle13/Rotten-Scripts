@@ -55,6 +55,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
 
 [[package]]
+name = "bitflags"
+version = "2.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
+
+[[package]]
 name = "bumpalo"
 version = "3.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -627,16 +633,28 @@ checksum = "af8b08b04175473088b46763e51ee54da5f9a164bc162f615b91bc179dbf15a3"
 
 [[package]]
 name = "openssl"
-version = "0.10.33"
+version = "0.10.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a61075b62a23fef5a29815de7536d940aa35ce96d18ce0cc5076272db678a577"
+checksum = "9529f4786b70a3e8c61e11179af17ab6188ad8d0ded78c5529441ed39d4bd9c1"
 dependencies = [
- "bitflags",
+ "bitflags 2.6.0",
  "cfg-if",
  "foreign-types",
  "libc",
  "once_cell",
+ "openssl-macros",
  "openssl-sys",
+]
+
+[[package]]
+name = "openssl-macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b501e44f11665960c7e7fcf062c7d96a14ade4aa98116c004b2e37b5be7d736c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
@@ -647,11 +665,10 @@ checksum = "77af24da69f9d9341038eba93a073b1fdaaa1b788221b00a69bce9e762cb32de"
 
 [[package]]
 name = "openssl-sys"
-version = "0.9.61"
+version = "0.9.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "313752393519e876837e09e1fa183ddef0be7735868dced3196f4472d536277f"
+checksum = "7f9e8deee91df40a943c71b917e5874b951d32a802526c85721ce3b776c929d6"
 dependencies = [
- "autocfg",
  "cc",
  "libc",
  "pkg-config",
@@ -819,7 +836,7 @@ version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94341e4e44e24f6b591b59e47a8a027df12e008d73fd5672dbea9cc22f4507d9"
 dependencies = [
- "bitflags",
+ "bitflags 1.2.1",
 ]
 
 [[package]]
@@ -954,7 +971,7 @@ version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3670b1d2fdf6084d192bc71ead7aabe6c06aa2ea3fbd9cc3ac111fa5c2b1bd84"
 dependencies = [
- "bitflags",
+ "bitflags 1.2.1",
  "core-foundation",
  "core-foundation-sys",
  "libc",
